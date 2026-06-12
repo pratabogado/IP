@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Santiago Prat Letelier — Abogado & Gestor de Innovación</title>
+  <meta name="description" content="Abogado especializado en transferencia tecnológica y propiedad intelectual. Encargado de Transferencia Tecnológica en CATA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #1a1a18;
+      --gray-dark: #4a4a47;
+      --gray-mid: #888780;
+      --gray-light: #d3d1c7;
+      --gray-surface: #f5f4f0;
+      --white: #ffffff;
+      --accent: #185fa5;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: var(--black);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 0.5px solid var(--gray-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 48px;
+      height: 56px;
+    }
+    .nav-logo {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--black);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 12px;
+      color: var(--gray-dark);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--black); }
+
+    /* HERO */
+    .hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 96px 48px 80px;
+      border-bottom: 0.5px solid var(--gray-light);
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-mid);
+      margin-bottom: 24px;
+    }
+    .hero-headline {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--black);
+      margin-bottom: 28px;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--gray-dark);
+    }
+    .hero-bio {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--gray-dark);
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.15s;
+      display: inline-block;
+    }
+    .btn-dark {
+      background: var(--black);
+      color: var(--white);
+      border: 1px solid var(--black);
+    }
+    .btn-dark:hover { background: var(--gray-dark); border-color: var(--gray-dark); }
+    .btn-outline {
+      background: transparent;
+      color: var(--black);
+      border: 0.5px solid var(--gray-light);
+    }
+    .btn-outline:hover { border-color: var(--gray-mid); }
+
+    /* SECTIONS */
+    section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 48px;
+      border-bottom: 0.5px solid var(--gray-light);
+    }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-mid);
+      margin-bottom: 36px;
+    }
+
+    /* EXPERTISE */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1px;
+      background: var(--gray-light);
+      border: 0.5px solid var(--gray-light);
+    }
+    .expertise-item {
+      background: var(--white);
+      padding: 28px 24px;
+    }
+    .expertise-number {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--gray-mid);
+      margin-bottom: 12px;
+    }
+    .expertise-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .expertise-desc {
+      font-size: 12px;
+      color: var(--gray-mid);
+      line-height: 1.6;
+    }
+
+    /* TRAYECTORIA */
+    .timeline { display: flex; flex-direction: column; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 0.5px solid var(--gray-light);
+    }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-period {
+      font-size: 12px;
+      color: var(--gray-mid);
+      padding-top: 2px;
+    }
+    .timeline-role {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 3px;
+    }
+    .timeline-org {
+      font-size: 13px;
+      color: var(--gray-dark);
+    }
+
+    /* CHARLAS */
+    .talk-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 0.5px solid var(--gray-light);
+    }
+    .talk-item:last-child { border-bottom: none; }
+    .talk-title { font-size: 14px; font-weight: 500; color: var(--black); margin-bottom: 3px; }
+    .talk-event { font-size: 13px; color: var(--gray-dark); }
+    .talk-year { font-size: 12px; color: var(--gray-mid); white-space: nowrap; padding-top: 2px; }
+
+    /* CONTACTO */
+    .contact-intro {
+      font-size: 15px;
+      color: var(--gray-dark);
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+    .contact-links { display: flex; flex-direction: column; gap: 0; }
+    .contact-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 0.5px solid var(--gray-light);
+      text-decoration: none;
+      color: var(--black);
+      transition: color 0.15s;
+    }
+    .contact-link:last-child { border-bottom: none; }
+    .contact-link:hover { color: var(--accent); }
+    .contact-link-label { font-size: 13px; color: var(--gray-mid); }
+    .contact-link-value { font-size: 14px; font-weight: 500; }
+    .contact-link-arrow { font-size: 16px; color: var(--gray-light); }
+
+    /* FOOTER */
+    footer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    footer p { font-size: 12px; color: var(--gray-mid); }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      nav { padding: 0 24px; }
+      .nav-links { gap: 20px; }
+      .hero, section, footer { padding-left: 24px; padding-right: 24px; }
+      .hero { padding-top: 56px; padding-bottom: 56px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+      .talk-item { flex-direction: column; gap: 4px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="#">Santiago Prat Letelier</a>
+    <ul class="nav-links">
+      <li><a href="#expertise">expertise</a></li>
+      <li><a href="#trayectoria">trayectoria</a></li>
+      <li><a href="#contacto">contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <p class="hero-eyebrow">Abogado · Gestor de Innovación · Santiago, Chile</p>
+    <h1 class="hero-headline">Innovación desde la<br><em>frontera del conocimiento.</em></h1>
+    <p class="hero-bio">
+      Especialista en transferencia tecnológica y propiedad intelectual con más de 10 años de experiencia. Actualmente en CATA, donde trabajo en llevar los resultados de la investigación astronómica a la industria y la sociedad.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-dark" href="#contacto">Contactar</a>
+      <a class="btn btn-outline" href="https://linkedin.com/in/pratletelier" target="_blank" rel="noopener">LinkedIn →</a>
+    </div>
+  </div>
+
+  <section id="expertise">
+    <p class="section-label">Áreas de expertise</p>
+    <div class="expertise-grid">
+      <div class="expertise-item">
+        <p class="expertise-number">01</p>
+        <p class="expertise-name">Transferencia tecnológica</p>
+        <p class="expertise-desc">Conexión entre investigación científica e industria</p>
+      </div>
+      <div class="expertise-item">
+        <p class="expertise-number">02</p>
+        <p class="expertise-name">Propiedad intelectual</p>
+        <p class="expertise-desc">Protección de activos de conocimiento e I+D</p>
+      </div>
+      <div class="expertise-item">
+        <p class="expertise-number">03</p>
+        <p class="expertise-name">Innovación abierta</p>
+        <p class="expertise-desc">Estrategias de colaboración universidad–empresa</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="trayectoria">
+    <p class="section-label">Trayectoria</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-period">2023 — hoy</span>
+        <div>
+          <p class="timeline-role">Director Red GT · Encargado de Transferencia Tecnológica</p>
+          <p class="timeline-org">CATA — Centro de Astrofísica y Tecnologías Afines</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-period">2022</span>
+        <div>
+          <p class="timeline-role">Soporte jurídico en transferencia tecnológica</p>
+          <p class="timeline-org">Universidad de los Andes</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-period">Anterior</span>
+        <div>
+          <p class="timeline-role">Especialista OTL · Propiedad Intelectual</p>
+          <p class="timeline-org">Pontificia Universidad Católica de Valparaíso</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="charlas">
+    <p class="section-label">Charlas y participaciones</p>
+    <div>
+      <div class="talk-item">
+        <div>
+          <p class="talk-title">How Astronomy Technology is Transforming Industries</p>
+          <p class="talk-event">Hackathon Patagonia</p>
+        </div>
+        <span class="talk-year">2025</span>
+      </div>
+      <div class="talk-item">
+        <div>
+          <p class="talk-title">Transferencia tecnológica e innovación en centros de investigación</p>
+          <p class="talk-event">Red OTT México</p>
+        </div>
+        <span class="talk-year">2024</span>
+      </div>
+      <div class="talk-item">
+        <div>
+          <p class="talk-title">Gestión tecnológica: de la universidad a la industria</p>
+          <p class="talk-event">From University to Industry Summer School · UC</p>
+        </div>
+        <span class="talk-year">2023</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <p class="section-label">Contacto</p>
+    <p class="contact-intro">
+      Si quieres conversar sobre transferencia tecnológica, propiedad intelectual o innovación, escríbeme.
+    </p>
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:pratabogadoip@gmail.com">
+        <span class="contact-link-label">Email</span>
+        <span class="contact-link-value">pratabogadoip@gmail.com</span>
+        <span class="contact-link-arrow">→</span>
+      </a>
+      <a class="contact-link" href="https://linkedin.com/in/pratletelier" target="_blank" rel="noopener">
+        <span class="contact-link-label">LinkedIn</span>
+        <span class="contact-link-value">linkedin.com/in/pratletelier</span>
+        <span class="contact-link-arrow">→</span>
+      </a>
+      <a class="contact-link" href="https://twitter.com/pratletelier" target="_blank" rel="noopener">
+        <span class="contact-link-label">Twitter / X</span>
+        <span class="contact-link-value">@pratletelier</span>
+        <span class="contact-link-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Santiago Prat Letelier · pratip.cl</p>
+    <p>© 2026</p>
+  </footer>
+
+</body>
+</html>
