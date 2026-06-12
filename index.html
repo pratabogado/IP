@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Santiago Prat Letelier — Abogado & Gestor de Innovación</title>
-  <meta name="description" content="Abogado especializado en transferencia tecnológica y propiedad intelectual. Encargado de Transferencia Tecnológica en CATA." />
+  <title>pratip.cl — Estudio de Propiedad Intelectual</title>
+  <meta name="description" content="Estudio jurídico boutique especializado en Propiedad Intelectual y Transferencia Tecnológica. Asesoría cercana para emprendedores, startups, universidades e investigadores en Chile." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black: #1a1a18;
-      --gray-dark: #4a4a47;
-      --gray-mid: #888780;
-      --gray-light: #d3d1c7;
-      --gray-surface: #f5f4f0;
-      --white: #ffffff;
-      --accent: #185fa5;
+      --ink:       #1c1c1a;
+      --ink-mid:   #4a4845;
+      --ink-light: #8a8680;
+      --rule:      #d8d4cc;
+      --surface:   #f7f5f1;
+      --white:     #ffffff;
+      --gold:      #9a7c3f;
     }
 
     html { font-size: 16px; scroll-behavior: smooth; }
@@ -26,371 +26,385 @@
     body {
       font-family: 'Inter', sans-serif;
       font-weight: 400;
-      color: var(--black);
+      color: var(--ink);
       background: var(--white);
       -webkit-font-smoothing: antialiased;
     }
 
-    /* NAV */
+    /* ── NAV ── */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 0.5px solid var(--gray-light);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 48px;
-      height: 56px;
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--rule);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 56px; height: 60px;
     }
-    .nav-logo {
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      color: var(--black);
-      text-decoration: none;
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px; font-weight: 500;
+      color: var(--ink); text-decoration: none;
+      letter-spacing: 0.02em;
     }
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
+    .nav-brand span { color: var(--gold); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a {
-      font-size: 12px;
-      color: var(--gray-dark);
-      text-decoration: none;
-      letter-spacing: 0.03em;
-      transition: color 0.2s;
+      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--ink-mid); text-decoration: none; transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--black); }
+    .nav-links a:hover { color: var(--ink); }
 
-    /* HERO */
+    /* ── HERO ── */
     .hero {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 96px 48px 80px;
-      border-bottom: 0.5px solid var(--gray-light);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 88vh;
+      border-bottom: 1px solid var(--rule);
     }
-    .hero-eyebrow {
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gray-mid);
-      margin-bottom: 24px;
+    .hero-left {
+      padding: 80px 56px 80px;
+      display: flex; flex-direction: column; justify-content: center;
+      border-right: 1px solid var(--rule);
+    }
+    .hero-tag {
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 28px;
     }
     .hero-headline {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(36px, 5vw, 52px);
-      font-weight: 400;
-      line-height: 1.15;
-      color: var(--black);
-      margin-bottom: 28px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 4.5vw, 60px);
+      font-weight: 500; line-height: 1.12;
+      color: var(--ink); margin-bottom: 32px;
     }
-    .hero-headline em {
-      font-style: italic;
-      color: var(--gray-dark);
+    .hero-headline em { font-style: italic; color: var(--ink-mid); }
+    .hero-body {
+      font-size: 15px; line-height: 1.85;
+      color: var(--ink-mid); max-width: 420px; margin-bottom: 48px;
     }
-    .hero-bio {
-      font-size: 15px;
-      line-height: 1.85;
-      color: var(--gray-dark);
-      max-width: 520px;
-      margin-bottom: 40px;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
     .btn {
-      font-size: 13px;
-      font-weight: 500;
-      padding: 10px 22px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: all 0.15s;
-      display: inline-block;
+      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 12px 28px; text-decoration: none; transition: all 0.2s;
+      display: inline-block; font-weight: 500;
     }
-    .btn-dark {
-      background: var(--black);
-      color: var(--white);
-      border: 1px solid var(--black);
+    .btn-gold {
+      background: var(--gold); color: var(--white); border: 1px solid var(--gold);
     }
-    .btn-dark:hover { background: var(--gray-dark); border-color: var(--gray-dark); }
+    .btn-gold:hover { background: #7e6432; border-color: #7e6432; }
     .btn-outline {
-      background: transparent;
-      color: var(--black);
-      border: 0.5px solid var(--gray-light);
+      background: transparent; color: var(--ink); border: 1px solid var(--rule);
     }
-    .btn-outline:hover { border-color: var(--gray-mid); }
+    .btn-outline:hover { border-color: var(--ink-mid); }
 
-    /* SECTIONS */
-    section {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 64px 48px;
-      border-bottom: 0.5px solid var(--gray-light);
+    .hero-right {
+      background: var(--surface);
+      padding: 80px 56px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .hero-stat-label {
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--ink-light); margin-bottom: 40px;
+    }
+    .hero-stats { display: flex; flex-direction: column; gap: 32px; }
+    .hero-stat {}
+    .hero-stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px; font-weight: 500; color: var(--ink); line-height: 1;
+      margin-bottom: 6px;
+    }
+    .hero-stat-desc { font-size: 13px; color: var(--ink-mid); line-height: 1.5; }
+    .hero-divider { height: 1px; background: var(--rule); margin: 8px 0; }
+
+    /* ── SECCIONES GENÉRICAS ── */
+    .section {
+      max-width: 1100px; margin: 0 auto;
+      padding: 80px 56px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .section-header {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 48px;
     }
     .section-label {
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gray-mid);
-      margin-bottom: 36px;
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 500; color: var(--ink);
     }
 
-    /* EXPERTISE */
-    .expertise-grid {
+    /* ── SERVICIOS ── */
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1px;
-      background: var(--gray-light);
-      border: 0.5px solid var(--gray-light);
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--rule);
     }
-    .expertise-item {
-      background: var(--white);
-      padding: 28px 24px;
+    .service-card {
+      padding: 36px 32px;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      transition: background 0.2s;
     }
-    .expertise-number {
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      color: var(--gray-mid);
+    .service-card:hover { background: var(--surface); }
+    .service-card:nth-child(3n) { border-right: none; }
+    .service-card:nth-last-child(-n+3) { border-bottom: none; }
+    .service-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px; font-weight: 500; color: var(--ink);
       margin-bottom: 12px;
     }
-    .expertise-name {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--black);
-      margin-bottom: 8px;
-      line-height: 1.4;
+    .service-desc { font-size: 13px; color: var(--ink-mid); line-height: 1.7; }
+
+    /* ── PARA QUIÉN ── */
+    .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .audience-card {
+      background: var(--surface);
+      padding: 40px 36px;
     }
-    .expertise-desc {
-      font-size: 12px;
-      color: var(--gray-mid);
-      line-height: 1.6;
+    .audience-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 14px;
+    }
+    .audience-desc { font-size: 14px; color: var(--ink-mid); line-height: 1.75; }
+
+    /* ── EQUIPO ── */
+    .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .team-member {}
+    .team-divider { height: 1px; background: var(--rule); margin-bottom: 28px; }
+    .team-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px; font-weight: 500; color: var(--ink); margin-bottom: 6px;
+    }
+    .team-role { font-size: 12px; color: var(--gold); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 20px; }
+    .team-bio { font-size: 13px; color: var(--ink-mid); line-height: 1.8; margin-bottom: 20px; }
+    .team-credentials { display: flex; flex-direction: column; gap: 6px; }
+    .team-cred {
+      font-size: 12px; color: var(--ink-light);
+      padding-left: 12px; border-left: 2px solid var(--rule);
+      line-height: 1.5;
     }
 
-    /* TRAYECTORIA */
-    .timeline { display: flex; flex-direction: column; }
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 24px;
-      padding: 20px 0;
-      border-bottom: 0.5px solid var(--gray-light);
-    }
-    .timeline-item:last-child { border-bottom: none; }
-    .timeline-period {
-      font-size: 12px;
-      color: var(--gray-mid);
-      padding-top: 2px;
-    }
-    .timeline-role {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--black);
-      margin-bottom: 3px;
-    }
-    .timeline-org {
-      font-size: 13px;
-      color: var(--gray-dark);
-    }
-
-    /* CHARLAS */
-    .talk-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 24px;
-      padding: 18px 0;
-      border-bottom: 0.5px solid var(--gray-light);
-    }
-    .talk-item:last-child { border-bottom: none; }
-    .talk-title { font-size: 14px; font-weight: 500; color: var(--black); margin-bottom: 3px; }
-    .talk-event { font-size: 13px; color: var(--gray-dark); }
-    .talk-year { font-size: 12px; color: var(--gray-mid); white-space: nowrap; padding-top: 2px; }
-
-    /* CONTACTO */
+    /* ── CONTACTO ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
     .contact-intro {
-      font-size: 15px;
-      color: var(--gray-dark);
-      line-height: 1.7;
-      max-width: 480px;
-      margin-bottom: 36px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px; font-weight: 400; font-style: italic;
+      color: var(--ink); line-height: 1.4; margin-bottom: 24px;
     }
-    .contact-links { display: flex; flex-direction: column; gap: 0; }
-    .contact-link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-      border-bottom: 0.5px solid var(--gray-light);
-      text-decoration: none;
-      color: var(--black);
-      transition: color 0.15s;
+    .contact-body { font-size: 14px; color: var(--ink-mid); line-height: 1.8; }
+    .contact-links { display: flex; flex-direction: column; }
+    .contact-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 0; border-bottom: 1px solid var(--rule);
+      text-decoration: none; color: var(--ink); transition: color 0.15s;
     }
-    .contact-link:last-child { border-bottom: none; }
-    .contact-link:hover { color: var(--accent); }
-    .contact-link-label { font-size: 13px; color: var(--gray-mid); }
-    .contact-link-value { font-size: 14px; font-weight: 500; }
-    .contact-link-arrow { font-size: 16px; color: var(--gray-light); }
+    .contact-item:first-child { border-top: 1px solid var(--rule); }
+    .contact-item:hover { color: var(--gold); }
+    .contact-item-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-light); }
+    .contact-item-value { font-size: 14px; font-weight: 500; }
+    .contact-item-arrow { color: var(--rule); font-size: 18px; }
 
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 32px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
+      max-width: 1100px; margin: 0 auto;
+      padding: 32px 56px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 8px;
     }
-    footer p { font-size: 12px; color: var(--gray-mid); }
+    footer p { font-size: 12px; color: var(--ink-light); }
 
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
       nav { padding: 0 24px; }
       .nav-links { gap: 20px; }
-      .hero, section, footer { padding-left: 24px; padding-right: 24px; }
-      .hero { padding-top: 56px; padding-bottom: 56px; }
-      .timeline-item { grid-template-columns: 1fr; gap: 4px; }
-      .talk-item { flex-direction: column; gap: 4px; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 56px 24px; border-right: none; border-bottom: 1px solid var(--rule); }
+      .hero-right { padding: 48px 24px; }
+      .section { padding: 56px 24px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { border-right: none; }
+      .service-card:nth-last-child(-n+3) { border-bottom: 1px solid var(--rule); }
+      .service-card:last-child { border-bottom: none; }
+      .audience-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; gap: 40px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      footer { padding: 24px; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      * { transition: none !important; }
-    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a class="nav-logo" href="#">Santiago Prat Letelier</a>
-    <ul class="nav-links">
-      <li><a href="#expertise">expertise</a></li>
-      <li><a href="#trayectoria">trayectoria</a></li>
-      <li><a href="#contacto">contacto</a></li>
-    </ul>
-  </nav>
+<nav>
+  <a class="nav-brand" href="#">prat<span>ip</span>.cl</a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#equipo">Equipo</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
 
-  <div class="hero">
-    <p class="hero-eyebrow">Abogado · Gestor de Innovación · Santiago, Chile</p>
-    <h1 class="hero-headline">Innovación desde la<br><em>frontera del conocimiento.</em></h1>
-    <p class="hero-bio">
-      Especialista en transferencia tecnológica y propiedad intelectual con más de 10 años de experiencia. Actualmente en CATA, donde trabajo en llevar los resultados de la investigación astronómica a la industria y la sociedad.
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <p class="hero-tag">Estudio Boutique de Propiedad Intelectual — Santiago, Chile</p>
+    <h1 class="hero-headline">Tu creación merece<br><em>protección inteligente.</em></h1>
+    <p class="hero-body">
+      Asesoramos a emprendedores, startups, universidades e investigadores en la protección y valorización de sus activos intelectuales. Conocimiento jurídico de primer nivel, trato cercano y estrategias reales.
     </p>
     <div class="hero-actions">
-      <a class="btn btn-dark" href="#contacto">Contactar</a>
-      <a class="btn btn-outline" href="https://linkedin.com/in/pratletelier" target="_blank" rel="noopener">LinkedIn →</a>
+      <a class="btn btn-gold" href="#contacto">Agendar consulta</a>
+      <a class="btn btn-outline" href="#servicios">Ver servicios</a>
     </div>
   </div>
-
-  <section id="expertise">
-    <p class="section-label">Áreas de expertise</p>
-    <div class="expertise-grid">
-      <div class="expertise-item">
-        <p class="expertise-number">01</p>
-        <p class="expertise-name">Transferencia tecnológica</p>
-        <p class="expertise-desc">Conexión entre investigación científica e industria</p>
+  <div class="hero-right">
+    <p class="hero-stat-label">Por qué pratip.cl</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <p class="hero-stat-number">+10</p>
+        <p class="hero-stat-desc">Años de experiencia en propiedad intelectual y transferencia tecnológica en Chile</p>
       </div>
-      <div class="expertise-item">
-        <p class="expertise-number">02</p>
-        <p class="expertise-name">Propiedad intelectual</p>
-        <p class="expertise-desc">Protección de activos de conocimiento e I+D</p>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <p class="hero-stat-number">INAPI</p>
+        <p class="hero-stat-desc">Representación ante el Instituto Nacional de Propiedad Industrial para todos tus trámites</p>
       </div>
-      <div class="expertise-item">
-        <p class="expertise-number">03</p>
-        <p class="expertise-name">Innovación abierta</p>
-        <p class="expertise-desc">Estrategias de colaboración universidad–empresa</p>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <p class="hero-stat-number">I+D+i</p>
+        <p class="hero-stat-desc">Especialización única en transferencia tecnológica desde centros de investigación a la industria</p>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <section id="trayectoria">
-    <p class="section-label">Trayectoria</p>
-    <div class="timeline">
-      <div class="timeline-item">
-        <span class="timeline-period">2023 — hoy</span>
-        <div>
-          <p class="timeline-role">Director Red GT · Encargado de Transferencia Tecnológica</p>
-          <p class="timeline-org">CATA — Centro de Astrofísica y Tecnologías Afines</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-period">2022</span>
-        <div>
-          <p class="timeline-role">Soporte jurídico en transferencia tecnológica</p>
-          <p class="timeline-org">Universidad de los Andes</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-period">Anterior</span>
-        <div>
-          <p class="timeline-role">Especialista OTL · Propiedad Intelectual</p>
-          <p class="timeline-org">Pontificia Universidad Católica de Valparaíso</p>
-        </div>
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <div class="section-header">
+    <span class="section-label">Servicios</span>
+    <h2 class="section-title">Lo que hacemos</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <p class="service-name">Registro de Marcas</p>
+      <p class="service-desc">Estudio de factibilidad, búsqueda de antecedentes y tramitación ante INAPI. Clasificación internacional de Niza y seguimiento del proceso completo.</p>
+    </div>
+    <div class="service-card">
+      <p class="service-name">Patentes e Invenciones</p>
+      <p class="service-desc">Asesoría en patentes de invención y modelos de utilidad. Análisis de libertad de operación y estrategia de protección para proyectos de I+D.</p>
+    </div>
+    <div class="service-card">
+      <p class="service-name">Transferencia Tecnológica</p>
+      <p class="service-desc">Estructuración de contratos de licencia, acuerdos de I+D y spin-offs desde universidades y centros de investigación hacia la industria.</p>
+    </div>
+    <div class="service-card">
+      <p class="service-name">Derecho de Autor</p>
+      <p class="service-desc">Protección de obras literarias, artísticas, software y contenidos digitales. Contratos de cesión y licencia de derechos.</p>
+    </div>
+    <div class="service-card">
+      <p class="service-name">Estrategia de PI</p>
+      <p class="service-desc">Diseño de portafolios de propiedad intelectual alineados al modelo de negocio. Auditorías y valorización de activos intangibles.</p>
+    </div>
+    <div class="service-card">
+      <p class="service-name">Contratos y Empresa</p>
+      <p class="service-desc">Constitución de empresas, pactos de socios, acuerdos de confidencialidad y contratos comerciales para startups y emprendedores.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section class="section" id="clientes">
+  <div class="section-header">
+    <span class="section-label">Para quién</span>
+    <h2 class="section-title">Trabajamos contigo si...</h2>
+  </div>
+  <div class="audience-grid">
+    <div class="audience-card">
+      <p class="audience-title">Eres emprendedor o startup</p>
+      <p class="audience-desc">Tienes una idea, un producto o una marca que quieres proteger antes de salir al mercado. Te ayudamos a construir una estrategia de PI desde el inicio, con asesoría clara y accesible que te permite tomar decisiones informadas sin perder tiempo ni dinero.</p>
+    </div>
+    <div class="audience-card">
+      <p class="audience-title">Eres investigador o universidad</p>
+      <p class="audience-desc">Tienes resultados de investigación con potencial de aplicación y necesitas estructurar su protección y transferencia a la industria. Tenemos experiencia directa en el ecosistema universitario chileno y en los mecanismos de transferencia tecnológica.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section class="section" id="equipo">
+  <div class="section-header">
+    <span class="section-label">Equipo</span>
+    <h2 class="section-title">Quiénes somos</h2>
+  </div>
+  <div class="team-grid">
+    <div class="team-member">
+      <div class="team-divider"></div>
+      <p class="team-name">Santiago Prat Letelier</p>
+      <p class="team-role">Socio Fundador</p>
+      <p class="team-bio">Abogado especializado en Propiedad Intelectual y Transferencia Tecnológica, con más de 10 años de experiencia asesorando a emprendedores, startups y centros de investigación en Chile. Actualmente encargado de Transferencia Tecnológica en CATA.</p>
+      <div class="team-credentials">
+        <p class="team-cred">Licenciado en Ciencias Jurídicas, PUCV</p>
+        <p class="team-cred">Magíster en Derecho, PUCV</p>
+        <p class="team-cred">Dip. Innovación y Transferencia Tecnológica, UTFSM</p>
+        <p class="team-cred">Dip. Negocios y Administración, UAI</p>
+        <p class="team-cred">L.A. Intellectual Property & Technology Transfer, UC School of Law</p>
       </div>
     </div>
-  </section>
+    <div class="team-member">
+      <div class="team-divider"></div>
+      <p class="team-name">Javiera Díaz Vargas</p>
+      <p class="team-role">Socia Fundadora</p>
+      <p class="team-bio">Abogada con especialización en Propiedad Intelectual y Derecho de la Empresa. Combina sólidos conocimientos jurídicos con una visión cercana y estratégica orientada al emprendimiento y la innovación.</p>
+      <div class="team-credentials">
+        <p class="team-cred">Licenciada en Ciencias Jurídicas, Universidad Adolfo Ibáñez (mención Derecho Privado)</p>
+        <p class="team-cred">Dip. Derecho y Empresa, Universidad de los Andes</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section id="charlas">
-    <p class="section-label">Charlas y participaciones</p>
+<!-- CONTACTO -->
+<section class="section" id="contacto">
+  <div class="section-header">
+    <span class="section-label">Contacto</span>
+    <h2 class="section-title">Hablemos</h2>
+  </div>
+  <div class="contact-grid">
     <div>
-      <div class="talk-item">
-        <div>
-          <p class="talk-title">How Astronomy Technology is Transforming Industries</p>
-          <p class="talk-event">Hackathon Patagonia</p>
-        </div>
-        <span class="talk-year">2025</span>
-      </div>
-      <div class="talk-item">
-        <div>
-          <p class="talk-title">Transferencia tecnológica e innovación en centros de investigación</p>
-          <p class="talk-event">Red OTT México</p>
-        </div>
-        <span class="talk-year">2024</span>
-      </div>
-      <div class="talk-item">
-        <div>
-          <p class="talk-title">Gestión tecnológica: de la universidad a la industria</p>
-          <p class="talk-event">From University to Industry Summer School · UC</p>
-        </div>
-        <span class="talk-year">2023</span>
-      </div>
+      <p class="contact-intro">"La mejor protección comienza con la pregunta correcta."</p>
+      <p class="contact-body">Si tienes un proyecto, una marca o una invención que proteger, escríbenos. La primera consulta es sin costo. Respondemos en menos de 24 horas.</p>
     </div>
-  </section>
-
-  <section id="contacto">
-    <p class="section-label">Contacto</p>
-    <p class="contact-intro">
-      Si quieres conversar sobre transferencia tecnológica, propiedad intelectual o innovación, escríbeme.
-    </p>
     <div class="contact-links">
-      <a class="contact-link" href="mailto:pratabogadoip@gmail.com">
-        <span class="contact-link-label">Email</span>
-        <span class="contact-link-value">pratabogadoip@gmail.com</span>
-        <span class="contact-link-arrow">→</span>
+      <a class="contact-item" href="mailto:pratabogadoip@gmail.com">
+        <span class="contact-item-label">Email</span>
+        <span class="contact-item-value">pratabogadoip@gmail.com</span>
+        <span class="contact-item-arrow">→</span>
       </a>
-      <a class="contact-link" href="https://linkedin.com/in/pratletelier" target="_blank" rel="noopener">
-        <span class="contact-link-label">LinkedIn</span>
-        <span class="contact-link-value">linkedin.com/in/pratletelier</span>
-        <span class="contact-link-arrow">→</span>
+      <a class="contact-item" href="https://linkedin.com/company/pratip" target="_blank" rel="noopener">
+        <span class="contact-item-label">LinkedIn</span>
+        <span class="contact-item-value">linkedin.com/company/pratip</span>
+        <span class="contact-item-arrow">→</span>
       </a>
-      <a class="contact-link" href="https://twitter.com/pratletelier" target="_blank" rel="noopener">
-        <span class="contact-link-label">Twitter / X</span>
-        <span class="contact-link-value">@pratletelier</span>
-        <span class="contact-link-arrow">→</span>
+      <a class="contact-item" href="https://instagram.com/pratip.cl" target="_blank" rel="noopener">
+        <span class="contact-item-label">Instagram</span>
+        <span class="contact-item-value">@pratip.cl</span>
+        <span class="contact-item-arrow">→</span>
+      </a>
+      <a class="contact-item" href="https://linkedin.com/in/pratletelier" target="_blank" rel="noopener">
+        <span class="contact-item-label">Santiago (personal)</span>
+        <span class="contact-item-value">linkedin.com/in/pratletelier</span>
+        <span class="contact-item-arrow">→</span>
       </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <p>Santiago Prat Letelier · pratip.cl</p>
-    <p>© 2026</p>
-  </footer>
+<footer>
+  <p>pratip.cl — Estudio de Propiedad Intelectual · Santiago, Chile</p>
+  <p>© 2026 Díaz & Prat Abogados</p>
+</footer>
 
 </body>
 </html>
